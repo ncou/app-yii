@@ -19,6 +19,9 @@ use Yiisoft\View\WebView;
 
 final class WebViewProvider extends ServiceProvider
 {
+    /**
+     * @suppress PhanAccessMethodProtected
+     */
     public function register(Container $container): void
     {
         $container->set(WebView::class, static function (ContainerInterface $container) {

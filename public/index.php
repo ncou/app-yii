@@ -23,10 +23,12 @@ require_once $autoload;
 // Don't do it in production, assembling takes it's time
 Builder::rebuild();
 $startTime = microtime(true);
+
 $container = new Container(
     require Builder::path('web'),
     require Builder::path('providers-web')
 );
+
 $container = $container->get(ContainerInterface::class);
 
 $eventConfigurator = $container->get(EventConfigurator::class);

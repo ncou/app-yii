@@ -25,6 +25,9 @@ final class FileTargetProvider extends ServiceProvider
         self::$levels = $levels;
     }
 
+    /**
+     * @suppress PhanAccessMethodProtected
+     */
     public function register(Container $container): void
     {
         $container->set(FileTarget::class, static function (ContainerInterface $container) {

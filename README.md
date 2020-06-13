@@ -11,6 +11,8 @@
 [![build](https://github.com/yii-extension/app/workflows/build/badge.svg)](https://github.com/yii-extension/app/actions)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yii-extension/app/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yii-extension/app/?branch=master)
 [![codecov](https://codecov.io/gh/yii-extension/app/branch/master/graph/badge.svg)](https://codecov.io/gh/yii-extension/app)
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fyii-extension%2Fapp%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/yii-extension/app/master)
+[![static analysis](https://github.com/yii-extension/app/workflows/static%20analysis/badge.svg)](https://github.com/yii-extension/app/actions?query=workflow%3A%22static+analysis%22)
 
 <p align="center">
     <a href="https://github.com/yii-extension/app" target="_blank">
@@ -56,129 +58,9 @@ composer create-project --prefer-dist --stability dev yii-extension/app <your pr
 Now you should be able to access the application through the following URL, assuming `app` is the directory
 directly under the `public` root.
 
-### Web application config
+### Configuring your application
 
-`config/params.php:`
-
-#### Yiisoft Application Components
-
-##### Aliases
-```php
-'aliases' => [
-    // directory aliases application templase standard
-    '@root' => dirname(__DIR__),
-    '@assets' => '@root/public/assets',
-    '@assetsUrl' => '/assets',
-    '@npm' => '@root/node_modules',
-    '@public' => '@root/public',
-    '@resources' => '@root/resources',
-    '@runtime' => '@root/runtime',
-    '@views' => '@root/resources/views'
-],
-```
-
-##### Cache
-```php
-'yiisoft/cache-file' => [
-    'file-cache' => [
-        // path directory cache
-        'path' => '@runtime/cache'
-    ],
-],
-```
-
-##### Log Target File
-```php
-use Psr\Log\LogLevel;
-
-'yiisoft/log-target-file' => [
-    'file-target' => [
-        // route directory file log
-        'file' => '@runtime/logs/app.log',
-        // levels logs target
-        'levels' => [
-            LogLevel::EMERGENCY,
-            LogLevel::ERROR,
-            LogLevel::WARNING,
-            LogLevel::INFO,
-            LogLevel::DEBUG,
-        ],
-    ],
-    'file-rotator' => [
-        // maximum file size, in kilo-bytes. Defaults to 10240, meaning 10MB.
-        'maxfilesize' => 10,
-        // number of files used for rotation. Defaults to 5.
-        'maxfiles' => 5,
-        // the permission to be set for newly created files.
-        'filemode' => null,
-        // Whether to rotate files by copy and truncate in contrast to rotation by renaming files.
-        'rotatebycopy' => null
-    ],
-],
-```
-
-##### Session
-```php
-'yiisoft/yii-web' => [
-    'session' => [
-        // options for cookies
-        'options' => ['cookie_secure' => 0],
-        // session handler
-        'handler' => null
-    ],
-],
-```
-
-##### Yii Debug
-```php
-'yiisoft/yii-debug' => [
-    // enabled/disabled debugger
-    'enabled' => true
-],
-```
-
-#### Application Layout Parameters
-```php
-'app' => [
-    'brandurl' => '/',
-    'charset' => 'UTF-8',
-    'hero.options' => ['class' => 'hero is-fullheight-with-navbar is-light'],
-    'hero.body.options' => ['class' => 'hero-body is-light'],
-    'hero.container.options' => ['class' => 'container has-text-centered'],
-    'hero.footer.options' => ['class' => 'hero-footer has-background-black'],
-    'hero.footer.column.options' => ['class' => 'columns is-mobile'],
-    'hero.footer.column.left' => 'Left',
-    'hero.footer.column.left.options' => ['class' => 'column has-text-left has-text-light'],
-    'hero.footer.column.center' => 'Center',
-    'hero.footer.column.center.options' => ['class' => 'column has-text-centered has-text-light'],
-    'hero.footer.column.right' => 'Right',
-    'hero.footer.column.right.options' => ['class' => 'column has-text-right has-text-light'],
-    'language' => 'en',
-    'logo' => '/images/yii-logo.jpg',
-    'menu' => [
-        /**
-        * Example menu config simple link, dropdown menu.
-        *[
-        *   'label' => 'Home',
-        *   'url' => ['site/index']
-        *],
-        *[
-        *   'label' => 'Dropdown',
-        *   'items' => [
-        *       ['label' => 'Level 1 - Dropdown B', 'url' => '#'],
-        *       ['label' => 'Level 2 - Dropdown A', 'url' => '#'],
-        *       '<li class="dropdown-divider"></li>',
-        *       '<li style="color:black;list-style-type: none">Dropdown Header</li>',
-        *       ['label' => 'Level 3 - Dropdown B', 'url' => '#'],
-        *       ['label' => 'Level 4 - Dropdown A', 'url' => '#'],
-        *   ],
-        *],
-        */
-    ],
-    'name' => 'My Project',
-    'navbar.options' => ['class' => 'is-black', 'data-sticky' => '', 'data-sticky-shadow' => '']
-]
-```
+The application is fully configurable through parameters. [Application settings](docs/CONFIG.md)
 
 ### Using PHP built-in server
 
@@ -192,9 +74,19 @@ php -S 127.0.0.1:8080 -t public
 http://localhost:8080
 ~~~
 
-### Running Codeception tests
+### Codeception testing
+
+The package is tested with [Codeception](https://github.com/Codeception/Codeception). To run tests:
 
 ~~~
 php -S 127.0.0.1:8080 -t public > yii.log 2>&1 &
 vendor/bin/codecept run
 ~~~
+
+### Static analysis
+
+The code is statically analyzed with [Phan](https://github.com/phan/phan/wiki). To run static analysis:
+
+```php
+./vendor/bin/phan
+```

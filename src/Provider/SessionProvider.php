@@ -23,6 +23,9 @@ final class SessionProvider extends ServiceProvider
         self::$sessionHandler = $sessionHandler;
     }
 
+    /**
+     * @suppress PhanAccessMethodProtected
+     */
     public function register(Container $container): void
     {
         $container->set(SessionInterface::class, static function () {

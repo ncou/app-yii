@@ -2,18 +2,57 @@
 
 declare(strict_types=1);
 
+use App\Asset\AppAsset;
+use App\Command\Hellow;
+use App\Command\Test;
 use Psr\Log\LogLevel;
 
 return [
-    'aliases' => [
-        '@root' => dirname(__DIR__),
-        '@assets' => '@root/public/assets',
-        '@assetsUrl' => '/assets',
-        '@npm' => '@root/node_modules',
-        '@public' => '@root/public',
-        '@resources' => '@root/resources',
-        '@runtime' => '@root/runtime',
-        '@views' => '@root/resources/views'
+    'console' => [
+        'id' => 'app-console',
+        'commands' => [
+            'hellow' => Hellow::class
+        ],
+        'version' => '3.0'
+    ],
+    'yiisoft/aliases' => [
+        'paths' => [
+            '@root' => dirname(__DIR__),
+            '@assets' => '@root/public/assets',
+            '@assetsUrl' => '/assets',
+            '@npm' => '@root/node_modules',
+            '@public' => '@root/public',
+            '@resources' => '@root/resources',
+            '@runtime' => '@root/runtime',
+            '@views' => '@root/resources/views',
+            '@vendor' => '@root/vendor'
+        ],
+    ],
+
+    'yiisoft/asset' => [
+        'assetconverter' => [
+            'command' => [
+                'from' => '',
+                'to' => '',
+                'command' => ''
+            ],
+            'forceconvert' => false
+        ],
+        'assetpublisher' => [
+            'appendtimestamp' => true,
+            'assetmap' => [],
+            'basepath' => '',
+            'baseurl' => '',
+            'forcecopy' => false,
+            'linkassets' => false,
+        ],
+        'assetmanager' => [
+            'bundles' => [
+            ],
+            'register' => [
+                AppAsset::class
+            ],
+        ],
     ],
 
     'yiisoft/cache-file' => [
@@ -48,11 +87,7 @@ return [
         ],
     ],
 
-    'yiisoft/yii-debug' => [
-        'enabled' => true
-    ],
-
-    'app' => [
+    'yii-extension/app' => [
         'brandurl' => '/',
         'charset' => 'UTF-8',
         'hero.options' => ['class' => 'hero is-fullheight-with-navbar is-light'],

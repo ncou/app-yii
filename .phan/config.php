@@ -310,10 +310,7 @@ return [
     //       should be added to the `directory_list` as well as
     //       to `exclude_analysis_directory_list`.
     'exclude_analysis_directory_list' => [
-        'vendor/',
-        'config/',
-        'src/Factory',
-        'src/Provider'
+        './vendor/'
     ],
 
     // Enable this to enable checks of require/include statements referring to valid paths.
@@ -377,5 +374,7 @@ return [
     // A list of individual files to include in analysis
     // with a path relative to the root directory of the
     // project.
-    'file_list' => [],
+    'file_list' => [
+        'src/ApplicationParameters.php'
+    ],
 ];

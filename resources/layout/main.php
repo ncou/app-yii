@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use App\Asset\AppAsset;
 use Yiisoft\Html\Html;
 
 /**
@@ -11,10 +10,6 @@ use Yiisoft\Html\Html;
  * @var string $csrf
  * @var string $content
  */
-
-$assetManager->register([
-    AppAsset::class,
-]);
 
 $this->setCssFiles($assetManager->getCssFiles());
 $this->setJsFiles($assetManager->getJsFiles());

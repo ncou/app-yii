@@ -19,6 +19,9 @@ use Yiisoft\Yii\Web\Data\Middleware\FormatDataResponse;
 
 final class RouterProvider extends ServiceProvider
 {
+    /**
+     * @suppress PhanAccessMethodProtected
+     */
     public function register(Container $container): void
     {
         $container->set(RouteCollectorInterface::class, Group::create());
