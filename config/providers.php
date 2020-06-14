@@ -7,7 +7,6 @@ declare(strict_types=1);
 use App\Provider\AliasesProvider;
 use App\Provider\CacheProvider;
 use App\Provider\ContainerInterfaceProvider;
-use App\Provider\EventDispatcherProvider;
 use App\Provider\FileRotatorProvider;
 use App\Provider\FileTargetProvider;
 use App\Provider\LoggerProvider;
@@ -29,7 +28,6 @@ return [
             $params['yiisoft/cache-file']['file-cache']['path'],
         ],
     ],
-    'yiisoft/event-dispatcher/eventdispatcher' => EventDispatcherProvider::class,
     'yiisoft/log-target-file/filerotator' => [
         '__class' => FileRotatorProvider::class,
         '__construct()' => [
