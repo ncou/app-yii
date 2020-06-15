@@ -15,5 +15,5 @@
   },
   "tmpDir": "runtime",  
   "testFramework": "codeception",
-  "timeout": 25
+  "timeout": 60
 }
