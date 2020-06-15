@@ -15,6 +15,7 @@ return [
         ],
         'version' => '3.0'
     ],
+
     'yiisoft/aliases' => [
         'paths' => [
             '@root' => dirname(__DIR__),
@@ -34,12 +35,6 @@ return [
             'register' => [
                 AppAsset::class
             ],
-        ],
-    ],
-
-    'yiisoft/cache-file' => [
-        'file-cache' => [
-            'path' => '@runtime/cache'
         ],
     ],
 
