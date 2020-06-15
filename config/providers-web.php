@@ -31,33 +31,6 @@ return [
             $params['yiisoft/yii-web']['session']['handler']
         ],
     ],
-    'yiisoft/asset/assetconverter' => [
-        '__class' => AssetConverterProvider::class,
-        '__construct()' => [
-            $params['yiisoft/asset']['assetconverter']['command']['from'],
-            $params['yiisoft/asset']['assetconverter']['command']['to'],
-            $params['yiisoft/asset']['assetconverter']['command']['command'],
-            $params['yiisoft/asset']['assetconverter']['forceconvert'],
-        ],
-    ],
-    'yiisoft/asset/assetpublisher' => [
-        '__class' => AssetPublisherProvider::class,
-        '__construct()' => [
-            $params['yiisoft/asset']['assetpublisher']['appendtimestamp'],
-            $params['yiisoft/asset']['assetpublisher']['assetmap'],
-            $params['yiisoft/asset']['assetpublisher']['basepath'],
-            $params['yiisoft/asset']['assetpublisher']['baseurl'],
-            $params['yiisoft/asset']['assetpublisher']['forcecopy'],
-            $params['yiisoft/asset']['assetpublisher']['linkassets'],
-        ],
-    ],
-    'yiisoft/asset/assetmanager' => [
-        '__class' => AssetManagerProvider::class,
-        '__construct()' => [
-            $params['yiisoft/asset']['assetmanager']['bundles'],
-            $params['yiisoft/asset']['assetmanager']['register'],
-        ],
-    ],
     'yii-extension/app/applicationparameters' => [
         '__class' => ApplicationParametersProvider::class,
         '__construct()' => [

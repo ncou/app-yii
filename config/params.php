@@ -30,25 +30,7 @@ return [
     ],
 
     'yiisoft/asset' => [
-        'assetconverter' => [
-            'command' => [
-                'from' => '',
-                'to' => '',
-                'command' => ''
-            ],
-            'forceconvert' => false
-        ],
-        'assetpublisher' => [
-            'appendtimestamp' => true,
-            'assetmap' => [],
-            'basepath' => '',
-            'baseurl' => '',
-            'forcecopy' => false,
-            'linkassets' => false,
-        ],
         'assetmanager' => [
-            'bundles' => [
-            ],
             'register' => [
                 AppAsset::class
             ],
@@ -58,25 +40,6 @@ return [
     'yiisoft/cache-file' => [
         'file-cache' => [
             'path' => '@runtime/cache'
-        ],
-    ],
-
-    'yiisoft/log-target-file' => [
-        'file-target' => [
-            'file' => '@runtime/logs/app.log',
-            'levels' => [
-                LogLevel::EMERGENCY,
-                LogLevel::ERROR,
-                LogLevel::WARNING,
-                LogLevel::INFO,
-                LogLevel::DEBUG,
-            ],
-        ],
-        'file-rotator' => [
-            'maxfilesize' => 10,
-            'maxfiles' => 5,
-            'filemode' => null,
-            'rotatebycopy' => null
         ],
     ],
 
