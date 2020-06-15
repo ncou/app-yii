@@ -14,5 +14,6 @@
     "@default": true
   },
   "tmpDir": "runtime",  
-  "testFramework": "codeception"
+  "testFramework": "codeception",
+  "timeout": 25
 }
