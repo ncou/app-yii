@@ -8,7 +8,7 @@ use App\Command\Test;
 use Psr\Log\LogLevel;
 
 return [
-    'console' => [
+    'yiisoft/yii-console' => [
         'id' => 'app-console',
         'commands' => [
             'hellow' => Hellow::class
