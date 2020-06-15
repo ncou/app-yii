@@ -13,6 +13,6 @@
   "mutators": {
     "@default": true
   },
-  "tmpDir": "/runtime",  
+  "tmpDir": "runtime",  
   "testFramework": "codeception"
 }
