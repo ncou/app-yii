@@ -13,7 +13,7 @@
         "php": ">=7.4",
         "nyholm/psr7": "^1.0",
         "yii-extension/bulma": "@dev",
-        "yii-extension/yii-event-dispatcher": "@dev",
+        "yii-extension/yii-log-target-file": "^1.0@dev",
         "yiisoft/aliases": "^1.0",
         "yiisoft/arrays": "^3.0@dev",
         "yiisoft/cache": "^3.0@dev",

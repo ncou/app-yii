@@ -9,9 +9,9 @@ return [
     'yiisoft/yii-console' => [
         '__class' => ApplicationProvider::class,
         '__construct()' => [
-            $params['console']['commands'],
-            $params['console']['name'],
-            $params['console']['version']
+            $params['yiisoft/yii-console']['commands'],
+            $params['yiisoft/yii-console']['name'],
+            $params['yiisoft/yii-console']['version']
         ],
     ],
 
