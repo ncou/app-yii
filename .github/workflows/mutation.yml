@@ -52,7 +52,6 @@ jobs:
       - name: Run test mutation infection with coverage
         run: |
           php -S 127.0.0.1:8080 -t public > ./runtime/logs/yii.log 2>&1 &
-          sudo chmod 777 /runtime
           vendor/bin/infection --no-progress --only-covered
         env:
           STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
