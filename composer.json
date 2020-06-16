@@ -15,8 +15,6 @@
         "yii-extension/bulma": "@dev",
         "yii-extension/framework-bundle": "^1.0@dev",
         "yiisoft/arrays": "^3.0@dev",
-        "yiisoft/router": "^3.0@dev",
-        "yiisoft/router-fastroute": "^3.0@dev",
         "yiisoft/view": "^3.0@dev",
         "yiisoft/yii-console": "^3.0@dev",
         "yiisoft/yii-web": "^3.0@dev"
