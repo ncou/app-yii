@@ -8,7 +8,12 @@ use App\Provider\WebViewProvider;
 use Yiisoft\Arrays\Modifier\ReverseBlockMerge;
 
 return [
-    'yiisoft/view/webview' => WebViewProvider::class,
+    'yiisoft/view/webview' => [
+        '__class' => WebViewProvider::class,
+        '__construct()' => [
+            $params['yiisoft/view']['defaultParameters'],
+        ],
+    ],
 
     ReverseBlockMerge::class => new ReverseBlockMerge()
 ];

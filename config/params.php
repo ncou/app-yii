@@ -2,16 +2,11 @@
 
 declare(strict_types=1);
 
-use App\Asset\AppAsset;
-use App\Command\Hellow;
-use App\Command\Test;
-use Psr\Log\LogLevel;
-
 return [
     'yiisoft/yii-console' => [
         'id' => 'app-console',
         'commands' => [
-            'hellow' => Hellow::class
+            'hellow' => '\App\Command\Hellow'
         ],
         'version' => '3.0'
     ],
@@ -33,8 +28,18 @@ return [
     'yiisoft/asset' => [
         'assetmanager' => [
             'register' => [
-                AppAsset::class
+                '\App\Asset\AppAsset'
             ],
+        ],
+    ],
+
+    'yiisoft/view' => [
+        'defaultParameters' => [
+            'aliases' => 'Yiisoft\Aliases\Aliases',
+            'applicationParameters' => 'App\ApplicationParameters',
+            'assetManager' => 'Yiisoft\Assets\AssetManager',
+            'urlGenerator' => 'Yiisoft\Router\UrlGeneratorInterface',
+            'urlMatcher' => 'Yiisoft\Router\UrlMatcherInterface'
         ],
     ],
 
