@@ -20,7 +20,7 @@
         "yiisoft/yii-web": "^3.0@dev"
     },
     "require-dev": {
-        "codeception/codeception": "4.1.x-dev",
+        "codeception/codeception": "^4.1.5",
         "codeception/module-asserts": "dev-master",
         "codeception/module-phpbrowser": "dev-master",
         "infection/codeception-adapter": "^0.3.3",
