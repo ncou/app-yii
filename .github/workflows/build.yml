@@ -51,7 +51,7 @@ jobs:
           extensions: ${{ env.extensions }}
           ini-values: date.timezone='UTC'
           coverage: pcov
-          tools: composer:v2
+          tools: composer:v1
 
       - name: Determine composer cache directory on Linux
         if: matrix.os == 'ubuntu-latest'
