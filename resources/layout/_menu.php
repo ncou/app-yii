@@ -12,7 +12,7 @@ use Yii\Extension\Bulma\Nav;
 use Yii\Extension\Bulma\NavBar;
 use Yiisoft\Html\Html;
 
-if (isset($user) && $user->getId() !== null) {
+if ($user !== null && $user->getId() !== null) {
     $menuItems[] = [
         'label' => 'Logout' . ' ' . '(' . $user->getIdentity()->username . ')',
         'url' => '/auth/logout'

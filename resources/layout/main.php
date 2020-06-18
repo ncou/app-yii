@@ -26,7 +26,7 @@ $this->setJsFiles($assetManager->getJsFiles());
 
             <?= Html::beginTag('body') ?>
 
-                <?= $this->render('_menu') ?>
+                <?= $this->render('_menu', ['user' => $user ?? null]) ?>
 
                 <?= Html::beginTag('section', $applicationParameters->getHeroOptions()) ?>
 
