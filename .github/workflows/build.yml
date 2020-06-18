@@ -7,7 +7,7 @@ name: build
 jobs:
   tests:
     name: PHP ${{ matrix.php-version }}-${{ matrix.os }}
-    
+
     env:
       extensions: curl, mbstring, dom, fileinfo, intl, json, libxml, xml, xmlwriter
       key: cache-v1
@@ -51,6 +51,7 @@ jobs:
           extensions: ${{ env.extensions }}
           ini-values: date.timezone='UTC'
           coverage: pcov
+          tools: composer:v2
 
       - name: Determine composer cache directory on Linux
         if: matrix.os == 'ubuntu-latest'
@@ -67,9 +68,6 @@ jobs:
           key: php${{ matrix.php-version }}-composer-${{ hashFiles('**/composer.json') }}
           restore-keys: |
             php${{ matrix.php-version }}-composer-
-
-      - name: Install composer v. 2.0
-        run: composer self-update --snapshot
 
       - name: Install dependencies with composer php 7.4
         if: matrix.php-version == '7.4'
