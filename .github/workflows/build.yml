@@ -10,7 +10,7 @@ jobs:
 
     env:
       extensions: curl, mbstring, dom, fileinfo, intl, json, libxml, xml, xmlwriter
-      key: cache-v1
+      key: cache-v2
       update: true
 
     runs-on: ${{ matrix.os }}
@@ -65,9 +65,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ env.COMPOSER_CACHE_DIR }}
-          key: php${{ matrix.php-version }}-composer-${{ hashFiles('**/composer.json') }}
+          key: php${{ matrix.php-version }}-composerv2-${{ hashFiles('**/composer.json') }}
           restore-keys: |
-            php${{ matrix.php-version }}-composer-
+            php${{ matrix.php-version }}-composerv2-
 
       - name: Install dependencies with composer php 7.4
         if: matrix.php-version == '7.4'
